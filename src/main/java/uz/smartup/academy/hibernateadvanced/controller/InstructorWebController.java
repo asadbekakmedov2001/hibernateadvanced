@@ -25,7 +25,7 @@ public class InstructorWebController {
 
     @RequestMapping("/delete/{id}")
     public String deleteInstructor(@PathVariable long id) {
-        service.deleteInstructor(id);
+//        service.deleteInstructor(id);
         System.out.printf("Instructor with id %d is deleted%n", id);
         return "redirect:/web/instructors/";
     }
