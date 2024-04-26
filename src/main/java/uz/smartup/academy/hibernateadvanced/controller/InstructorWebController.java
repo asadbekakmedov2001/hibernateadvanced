@@ -3,6 +3,7 @@ package uz.smartup.academy.hibernateadvanced.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import uz.smartup.academy.hibernateadvanced.dto.CourseDTO;
 import uz.smartup.academy.hibernateadvanced.service.InstructorService;
 
 @Controller
@@ -22,13 +23,13 @@ public class InstructorWebController {
     }
     @GetMapping("/courses/{id}")
     public String getCourseStudents(@PathVariable int id,Model model) {
-        model.addAttribute("studentDTO", service.getCourseStudentsById(id));
+//        model.addAttribute("studentDTO", service.getCourseStudentsById(id));
         return "course/course-student-form";
     }
 
     @GetMapping("/courses/edit/{id}")
     public String editCourseForm(@PathVariable int id, Model model) {
-        model.addAttribute("courseDTO", service.getCourseById(id));
+//        model.addAttribute("courseDTO", service.getCourseById(id));
         //System.out.println(service.getCourseById(id));
         return "course/course-edit";
     }
@@ -38,7 +39,7 @@ public class InstructorWebController {
                                @ModelAttribute("courseDTO") CourseDTO courseDTO,
                                Model model) {
 
-        service.updateCourse(courseDTO,id);
+//        service.updateCourse(courseDTO,id);
         return "course/courses-form.html";
     }
 
