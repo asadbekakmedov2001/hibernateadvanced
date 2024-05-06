@@ -2,13 +2,13 @@ package uz.smartup.academy.hibernateadvanced.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import uz.smartup.academy.studentmanagementsystem.dao.AppDAO;
-import uz.smartup.academy.studentmanagementsystem.dto.CourseDTO;
-import uz.smartup.academy.studentmanagementsystem.dto.CourseDTOUtil;
-import uz.smartup.academy.studentmanagementsystem.dto.InstructorDTO;
-import uz.smartup.academy.studentmanagementsystem.dto.InstructorDTOUtil;
-import uz.smartup.academy.studentmanagementsystem.entity.Course;
-import uz.smartup.academy.studentmanagementsystem.entity.Instructor;
+import uz.smartup.academy.hibernateadvanced.dao.AppDAO;
+import uz.smartup.academy.hibernateadvanced.dto.CourseDTO;
+import uz.smartup.academy.hibernateadvanced.dto.CourseDTOUtil;
+import uz.smartup.academy.hibernateadvanced.dto.InstructorDTO;
+import uz.smartup.academy.hibernateadvanced.dto.InstructorDTOUtil;
+import uz.smartup.academy.hibernateadvanced.entity.Course;
+import uz.smartup.academy.hibernateadvanced.entity.Instructor;
 
 import java.util.List;
 

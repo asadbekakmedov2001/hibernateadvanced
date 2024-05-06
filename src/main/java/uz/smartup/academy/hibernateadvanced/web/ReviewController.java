@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uz.smartup.academy.studentmanagementsystem.service.ReviewService;
+import uz.smartup.academy.hibernateadvanced.service.ReviewService;
 
 @Controller
 @RequestMapping("/web/reviews/")

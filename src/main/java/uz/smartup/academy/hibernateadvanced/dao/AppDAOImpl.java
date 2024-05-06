@@ -4,7 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
-import uz.smartup.academy.studentmanagementsystem.entity.*;
+import uz.smartup.academy.hibernateadvanced.entity.*;
 
 import java.util.List;
 

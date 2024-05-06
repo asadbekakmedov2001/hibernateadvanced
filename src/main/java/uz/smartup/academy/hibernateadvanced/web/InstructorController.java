@@ -3,10 +3,10 @@ package uz.smartup.academy.hibernateadvanced.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import uz.smartup.academy.studentmanagementsystem.dto.CourseDTO;
-import uz.smartup.academy.studentmanagementsystem.dto.InstructorDTO;
-import uz.smartup.academy.studentmanagementsystem.service.InstructorServis;
-import uz.smartup.academy.studentmanagementsystem.service.UserServise;
+import uz.smartup.academy.hibernateadvanced.dto.CourseDTO;
+import uz.smartup.academy.hibernateadvanced.dto.InstructorDTO;
+import uz.smartup.academy.hibernateadvanced.service.InstructorServis;
+import uz.smartup.academy.hibernateadvanced.service.UserServise;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package uz.smartup.academy.hibernateadvanced.dao;
 
-import uz.smartup.academy.studentmanagementsystem.entity.*;
+import uz.smartup.academy.hibernateadvanced.entity.*;
 
 import java.util.List;
 

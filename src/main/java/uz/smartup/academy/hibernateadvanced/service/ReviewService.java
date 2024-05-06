@@ -1,7 +1,7 @@
 package uz.smartup.academy.hibernateadvanced.service;
 
 
-import uz.smartup.academy.studentmanagementsystem.dto.ReviewDTO;
+import uz.smartup.academy.hibernateadvanced.dto.ReviewDTO;
 
 import java.util.List;
 

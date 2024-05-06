@@ -1,10 +1,10 @@
 package uz.smartup.academy.hibernateadvanced.dto;
 
 import org.springframework.stereotype.Component;
-import uz.smartup.academy.studentmanagementsystem.dao.AppDAO;
-import uz.smartup.academy.studentmanagementsystem.entity.Course;
-import uz.smartup.academy.studentmanagementsystem.entity.Review;
-import uz.smartup.academy.studentmanagementsystem.entity.Student;
+import uz.smartup.academy.hibernateadvanced.dao.AppDAO;
+import uz.smartup.academy.hibernateadvanced.entity.Course;
+import uz.smartup.academy.hibernateadvanced.entity.Review;
+import uz.smartup.academy.hibernateadvanced.entity.Student;
 
 import java.util.List;
 

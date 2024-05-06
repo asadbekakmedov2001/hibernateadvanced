@@ -2,8 +2,8 @@ package uz.smartup.academy.hibernateadvanced.dto;
 
 
 import org.springframework.stereotype.Component;
-import uz.smartup.academy.studentmanagementsystem.entity.Role;
-import uz.smartup.academy.studentmanagementsystem.entity.User;
+import uz.smartup.academy.hibernateadvanced.entity.Role;
+import uz.smartup.academy.hibernateadvanced.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;

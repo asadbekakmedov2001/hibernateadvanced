@@ -1,7 +1,7 @@
 package uz.smartup.academy.hibernateadvanced.dto;
 
 import org.springframework.stereotype.Component;
-import uz.smartup.academy.studentmanagementsystem.entity.Course;
+import uz.smartup.academy.hibernateadvanced.entity.Course;
 
 import java.util.List;
 

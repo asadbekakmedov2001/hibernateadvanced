@@ -5,8 +5,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import uz.smartup.academy.studentmanagementsystem.dao.AppDAO;
-import uz.smartup.academy.studentmanagementsystem.entity.User;
+import uz.smartup.academy.hibernateadvanced.dao.AppDAO;
+import uz.smartup.academy.hibernateadvanced.entity.User;
 
 @Controller
 public class ProfileController {

@@ -1,6 +1,6 @@
 package uz.smartup.academy.hibernateadvanced.service;
 
-import uz.smartup.academy.studentmanagementsystem.dto.UserDTO;
+import uz.smartup.academy.hibernateadvanced.dto.UserDTO;
 
 import java.util.List;
 
