@@ -1,10 +1,12 @@
-package uz.smartup.academy.hibernateadvanced.entity;
+package uz.smartup.academy.studentmanagementsystem.entity;
+
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "instructor_detail")
+@Table(name ="instructor_detail")
 public class InstructorDetail {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

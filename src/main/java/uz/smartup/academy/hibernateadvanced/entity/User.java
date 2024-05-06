@@ -1,41 +1,85 @@
-package uz.smartup.academy.hibernateadvanced.entity;
+package uz.smartup.academy.studentmanagementsystem.entity;
+
 
 import jakarta.persistence.*;
 
+import java.util.List;
 @Entity
-@Table(name = "user")
+@Table(name= "user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
-    @Column(name = "username")
-    private String username;
-    @Column(name = "password")
-    private String password;
-    @Column(name = "enabled")
-    private String enabled;
-    @Column(name = "first_name")
-    private String firstName;
-    @Column(name = "last_name")
-    private String lastName;
-    @Column(name = "email")
-    private String email;
+    public int id;
 
-    public long getId() {
+    @Column(name = "first_name")
+    public String firstName;
+
+    @Column(name = "last_name")
+    public String lastName;
+
+    @Column(name = "email")
+    public String email;
+
+    @Column(name = "username")
+    public String userName;
+
+    @Column(name = "password")
+    public String password;
+
+    @Column(name = "enabled")
+    public String enabled;
+
+    @OneToMany(  cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name = "username", referencedColumnName = "username", updatable = false)
+    private List<Role> roles;
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    public Student student;
+
+
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    public Instructor instructor;
+
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -46,7 +90,7 @@ public class User {
         this.password = password;
     }
 
-    public String isEnabled() {
+    public String getEnabled() {
         return enabled;
     }
 
@@ -54,16 +98,41 @@ public class User {
         this.enabled = enabled;
     }
 
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Instructor getInstructor() {
+        return instructor;
+    }
+
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", enabled='" + enabled + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled='" + enabled + '\'' +
+                ", roles=" + roles +
                 '}';
     }
 }

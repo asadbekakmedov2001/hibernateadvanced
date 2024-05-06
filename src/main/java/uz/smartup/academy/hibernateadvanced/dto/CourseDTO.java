@@ -1,58 +1,19 @@
-package uz.smartup.academy.hibernateadvanced.dto;
+package uz.smartup.academy.studentmanagementsystem.dto;
 
 public class CourseDTO {
-    private int id;
-    private String title;
-    private String description;
-    private int price;
-    private int instructorId;
+    public int id;
 
-    public CourseDTO(Builder builder) {
-        this.id = builder.id;
-        this.title = builder.title;
-        this.description = builder.description;
-        this.price = builder.price;
-    }
+    public String title;
 
-    public CourseDTO() {
-    }
+    public String description;
 
-    public static class Builder {
-        private int id;
-        private String title;
-        private String description;
-        private int price;
-        private int instructorId;
+    public int price;
 
-        public Builder id(int id) {
-            this.id = id;
-            return this;
-        }
+    public int instructorId;
 
-        public Builder title(String title) {
-            this.title = title;
-            return this;
-        }
+    public int studentId;
 
-        public Builder description(String description) {
-            this.description = description;
-            return this;
-        }
-
-        public Builder price(int price) {
-            this.price = price;
-            return this;
-        }
-
-        public Builder instructorId(int instructorId) {
-            this.instructorId = instructorId;
-            return this;
-        }
-
-        public CourseDTO build() {
-            return new CourseDTO(this);
-        }
-    }
+    public int reviewId;
 
     public int getId() {
         return id;
@@ -92,5 +53,34 @@ public class CourseDTO {
 
     public void setInstructorId(int instructorId) {
         this.instructorId = instructorId;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    public int getReviewId() {
+        return reviewId;
+    }
+
+    public void setReviewId(int reviewId) {
+        this.reviewId = reviewId;
+    }
+
+    @Override
+    public String toString() {
+        return "CourseDTO{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", instructorId=" + instructorId +
+                ", studentId=" + studentId +
+                ", reviewId=" + reviewId +
+                '}';
     }
 }

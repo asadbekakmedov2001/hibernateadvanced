@@ -1,7 +1,5 @@
-package uz.smartup.academy.hibernateadvanced.entity;
+package uz.smartup.academy.studentmanagementsystem.entity;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -10,6 +8,7 @@ import java.util.List;
 @Entity
 @Table(name = "course")
 public class Course {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,8 +27,7 @@ public class Course {
     @JoinColumn(name = "instructor_id")
     private Instructor instructor;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "course_id")
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
     private List<Review> reviews;
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
@@ -116,8 +114,7 @@ public class Course {
                 ", description='" + description + '\'' +
                 ", price=" + price +
                 ", instructor=" + instructor +
-                ", reviews=" + reviews +
-                ", students=" + students +
+
                 '}';
     }
 }

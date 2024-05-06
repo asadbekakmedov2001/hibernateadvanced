@@ -1,36 +1,67 @@
-package uz.smartup.academy.hibernateadvanced.dao;
+package uz.smartup.academy.studentmanagementsystem.dao;
 
-import uz.smartup.academy.hibernateadvanced.dto.CourseDTO;
-import uz.smartup.academy.hibernateadvanced.entity.*;
+import uz.smartup.academy.studentmanagementsystem.entity.*;
 
 import java.util.List;
 
 public interface AppDAO {
-    void save(Instructor instructor);
 
-    List<Instructor> getAllInstructors();
 
-    Instructor findInstructorById(int id);
 
-    void update(Instructor instructor);
+    Instructor instructorFindBuId(int id);
 
-    void deleteInstructorById(int id);
+    List<Instructor> findInstructorByFirstname(String firstName);
 
-    void save(Course course);
+    List<Instructor> instructorAll();
 
-    List<Course> getAllCourcesByInstructorId(int id);
+    void instructorPersist(Instructor instructor);
 
-    void save(Student student);
+    void instructorMerge(Instructor instructor);
 
-    List<Student> getAllStudents();
+    void instructorDeleteById(int id);
+
+    void instructorAddCourse(Course course);
+
+    List<Course> instructorAllCourse(int instructorId);
+
+    List<Course>findInstructorCourseBuTitle(int instructorId, String title);
+
+    void userPersist(User user);
+
+    void UserDeleteById(User user);
+
+    User userFindById(int id);
+
+    User userFindByUserName(String username);
+
+    List<User> userAll();
+
+    void userMerge(User user);
+
+    List<User> userFindByFirstName(String userName);
+
+    List<Role> userFindByRoles(String userName);
+
+    void removeRoles(String userName);
+
+    void removeRole(Role role);
+
+    void instructorAddCourseSave(Course course);
+
+
+    List<Student> studentAll();
+
+    List<Student> findStudentByFirstName(String firstName);
+
+    void studentPersist(Student student);
+
+    void updateStudent(Student student);
 
     Student findStudentById(int id);
 
-    void update(Student student);
-
     void deleteStudentById(int id);
 
-    void addStudentToCourse(int studentId, int courseId);
+    void addCourseInStudent(int studentId, int courseId);
 
     List<Course> getStudentCourses(int id);
 
@@ -53,4 +84,16 @@ public interface AppDAO {
     void updateCourse(Course course);
 
     void deleteCourseById(int id);
+
+    void deleteReviewsByCourseId(int courseId);
+
+    List<Review> getAllReviews();
+
+    Review findReviewsById(int id);
+
+    void deleteReviewById(int id);
+
+    List<Course> getCoursesFilteredByStudent(int id);
+
+
 }

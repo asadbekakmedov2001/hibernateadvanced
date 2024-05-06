@@ -1,16 +1,19 @@
-package uz.smartup.academy.hibernateadvanced.service;
+package uz.smartup.academy.studentmanagementsystem.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-import uz.smartup.academy.hibernateadvanced.dto.*;
-import uz.smartup.academy.hibernateadvanced.dao.AppDAO;
-import uz.smartup.academy.hibernateadvanced.entity.Course;
-import uz.smartup.academy.hibernateadvanced.entity.Instructor;
+import uz.smartup.academy.studentmanagementsystem.dao.AppDAO;
+import uz.smartup.academy.studentmanagementsystem.dto.*;
+import uz.smartup.academy.studentmanagementsystem.entity.Course;
+import uz.smartup.academy.studentmanagementsystem.entity.Instructor;
+import uz.smartup.academy.studentmanagementsystem.entity.Review;
+import uz.smartup.academy.studentmanagementsystem.entity.Student;
+
 
 import java.util.List;
 
 @Service
-public class CourseServiceImpl implements CourseService {
+public class CourseServiceImpl implements CourseService{
     private final AppDAO dao;
     private final CourseDTOUtil courseDTOUtil;
     private final ReviewDTOUtil reviewDTOUtil;
@@ -45,18 +48,19 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     @Transactional
-    public void updateCourse(CourseDTO courseDTO) {
+    public void updateCourse(CourseDTO courseDTO, int id) {
         Course course = courseDTOUtil.toEntity(courseDTO);
-        Instructor instructor = dao.findInstructorById(courseDTO.getInstructorId());
+        Instructor instructor = dao.instructorFindBuId(courseDTO.getInstructorId());
+        List<Student> student = dao.getStudentsByCourseId(courseDTO.getId());
+        course.setStudents(student);
         course.setInstructor(instructor);
         instructor.addCourse(course);
-//        course.setInstructor(dao.findInstructorById(courseDTO.getInstructorId()));
         dao.updateCourse(course);
     }
 
     @Override
     @Transactional
     public void deleteCourseById(int id) {
-        dao.deleteCourseById(id);
+            dao.deleteCourseById(id);
     }
 }

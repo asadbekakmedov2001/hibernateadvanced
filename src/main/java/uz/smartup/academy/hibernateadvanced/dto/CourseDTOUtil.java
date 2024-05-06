@@ -1,33 +1,37 @@
-package uz.smartup.academy.hibernateadvanced.dto;
+package uz.smartup.academy.studentmanagementsystem.dto;
 
 import org.springframework.stereotype.Component;
-import uz.smartup.academy.hibernateadvanced.entity.Course;
+import uz.smartup.academy.studentmanagementsystem.entity.Course;
 
 import java.util.List;
 
 @Component
 public class CourseDTOUtil {
-    public Course toEntity(CourseDTO courseDTO) {
-        Course course = new Course();
+    public Course toEntity(CourseDTO courseDTO){
+        Course course=new Course();
         course.setId(courseDTO.getId());
         course.setTitle(courseDTO.getTitle());
         course.setDescription(courseDTO.getDescription());
         course.setPrice(courseDTO.getPrice());
 
+
         return course;
     }
 
-    public CourseDTO toDTO(Course course) {
-        return new CourseDTO.Builder()
-                .id(course.getId())
-                .title(course.getTitle())
-                .description(course.getDescription())
-                .price(course.getPrice())
-                .instructorId(course.getInstructor().getId())
-                .build();
+    public CourseDTO toDTO(Course courseDTO){
+        CourseDTO course=new CourseDTO();
+        course.setId(courseDTO.getId());
+        course.setTitle(courseDTO.getTitle());
+        course.setDescription(courseDTO.getDescription());
+        course.setPrice(courseDTO.getPrice());
+        course.setInstructorId(courseDTO.getInstructor().getId());
+
+        return course;
     }
 
-    public List<CourseDTO> toDTOs(List<Course> courses) {
-        return courses.stream().map(this::toDTO).toList();
+    public List<CourseDTO> toDTOs(List<Course> courses){
+        return courses.stream()
+                .map(this::toDTO)
+                .toList();
     }
 }

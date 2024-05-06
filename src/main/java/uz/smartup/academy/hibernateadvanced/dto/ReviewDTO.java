@@ -1,11 +1,11 @@
-package uz.smartup.academy.hibernateadvanced.dto;
-
-import jakarta.persistence.Column;
+package uz.smartup.academy.studentmanagementsystem.dto;
 
 public class ReviewDTO {
     private int id;
     private int rating;
     private String comment;
+    private int courseId;
+    private  int studentId;
 
     public int getId() {
         return id;
@@ -29,5 +29,32 @@ public class ReviewDTO {
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public int getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    @Override
+    public String toString() {
+        return "ReviewDTO{" +
+                "id=" + id +
+                ", rating=" + rating +
+                ", comment='" + comment + '\'' +
+                ", courseId=" + courseId +
+                ", studentId=" + studentId +
+                '}';
     }
 }

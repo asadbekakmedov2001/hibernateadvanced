@@ -1,10 +1,20 @@
-package uz.smartup.academy.hibernateadvanced.dto;
+package uz.smartup.academy.studentmanagementsystem.dto;
 
 public class StudentDTO {
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String email;
+
+    public int id;
+
+    public String userName;
+
+    public String password;
+
+    public String firstName;
+
+    public String lastName;
+
+    public String email;
+
+//    public int userId;
 
     public int getId() {
         return id;
@@ -12,6 +22,22 @@ public class StudentDTO {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -36,5 +62,26 @@ public class StudentDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+//    public int getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(int userId) {
+//        this.userId = userId;
+//    }
+
+
+    @Override
+    public String toString() {
+        return "StudentDTO{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
