@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.dao;
+package uz.smartup.academy.hibernateadvanced.dao;
 
 import uz.smartup.academy.studentmanagementsystem.entity.*;
 

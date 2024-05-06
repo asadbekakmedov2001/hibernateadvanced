@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.entity;
+package uz.smartup.academy.hibernateadvanced.entity;
 
 
 import jakarta.persistence.*;

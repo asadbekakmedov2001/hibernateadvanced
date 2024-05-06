@@ -1,7 +1,7 @@
-package uz.smartup.academy.studentmanagementsystem.service;
+package uz.smartup.academy.hibernateadvanced.service;
+
 import uz.smartup.academy.studentmanagementsystem.dto.CourseDTO;
 import uz.smartup.academy.studentmanagementsystem.dto.InstructorDTO;
-import uz.smartup.academy.studentmanagementsystem.entity.Course;
 
 import java.util.List;
 

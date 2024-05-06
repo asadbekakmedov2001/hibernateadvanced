@@ -1,11 +1,9 @@
-package uz.smartup.academy.studentmanagementsystem.web;
+package uz.smartup.academy.hibernateadvanced.web;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uz.smartup.academy.studentmanagementsystem.service.InstructorServis;
-import uz.smartup.academy.studentmanagementsystem.service.StudentServise;
 
 
 @Controller

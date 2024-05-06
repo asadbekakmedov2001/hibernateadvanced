@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.dto;
+package uz.smartup.academy.hibernateadvanced.dto;
 
 public class StudentDTO {
 

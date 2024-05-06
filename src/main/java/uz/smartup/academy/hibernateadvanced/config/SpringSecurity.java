@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.config;
+package uz.smartup.academy.hibernateadvanced.config;
 
 
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.dto;
+package uz.smartup.academy.hibernateadvanced.dto;
 
 import org.springframework.stereotype.Component;
 import uz.smartup.academy.studentmanagementsystem.dao.AppDAO;

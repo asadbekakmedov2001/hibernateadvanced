@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.web;
+package uz.smartup.academy.hibernateadvanced.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
