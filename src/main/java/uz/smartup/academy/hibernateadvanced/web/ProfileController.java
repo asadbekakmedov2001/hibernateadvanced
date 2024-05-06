@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.web;
+package uz.smartup.academy.hibernateadvanced.web;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;

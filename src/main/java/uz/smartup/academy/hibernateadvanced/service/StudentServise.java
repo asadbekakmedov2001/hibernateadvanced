@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.service;
+package uz.smartup.academy.hibernateadvanced.service;
 
 
 

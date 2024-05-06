@@ -1,7 +1,6 @@
-package uz.smartup.academy.studentmanagementsystem.dao;
+package uz.smartup.academy.hibernateadvanced.dao;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;

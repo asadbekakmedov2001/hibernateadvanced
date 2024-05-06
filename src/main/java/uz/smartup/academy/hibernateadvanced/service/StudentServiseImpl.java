@@ -1,4 +1,4 @@
-package uz.smartup.academy.studentmanagementsystem.service;
+package uz.smartup.academy.hibernateadvanced.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -7,7 +7,6 @@ import uz.smartup.academy.studentmanagementsystem.dto.*;
 import uz.smartup.academy.studentmanagementsystem.entity.Course;
 import uz.smartup.academy.studentmanagementsystem.entity.Review;
 import uz.smartup.academy.studentmanagementsystem.entity.Student;
-import uz.smartup.academy.studentmanagementsystem.entity.User;
 
 import java.util.List;
 @Service
