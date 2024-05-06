@@ -1,25 +1,26 @@
 package uz.smartup.academy.hibernateadvanced.service;
 
-import uz.smartup.academy.hibernateadvanced.dto.CourseDTO;
-import uz.smartup.academy.hibernateadvanced.dto.ReviewDTO;
-import uz.smartup.academy.hibernateadvanced.dto.StudentDTO;
+
+
+import uz.smartup.academy.studentmanagementsystem.dto.CourseDTO;
+import uz.smartup.academy.studentmanagementsystem.dto.ReviewDTO;
+import uz.smartup.academy.studentmanagementsystem.dto.StudentDTO;
 
 import java.util.List;
 
-public interface StudentService {
-    void createStudent(StudentDTO StudentDTO);
+public interface StudentServise {
 
-    List<StudentDTO> getStudents();
+    List<StudentDTO>  studentAll();
 
-    StudentDTO getStudent(int id);
-
-    void updateStudent(StudentDTO StudentDTO);
+    List<StudentDTO> findStudentByFirstName(String firstName);
 
     void deleteStudent(int id);
 
     void enrollCourse(int id, int courseId);
 
     List<CourseDTO> getStudentCourses(int id);
+
+    List<CourseDTO> getCourseFilteredStudentById(int id);
 
     void excludeStudentFromCourse(int id, int courseId);
 
@@ -28,4 +29,5 @@ public interface StudentService {
     List<ReviewDTO> getReviews(int id, int courseId);
 
     void updateReview(int id, int courseId, ReviewDTO review);
+
 }

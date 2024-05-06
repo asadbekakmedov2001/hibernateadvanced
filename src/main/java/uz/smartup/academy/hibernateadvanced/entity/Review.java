@@ -1,5 +1,6 @@
 package uz.smartup.academy.hibernateadvanced.entity;
 
+
 import jakarta.persistence.*;
 
 @Entity
@@ -16,11 +17,13 @@ public class Review {
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "course_id")
-    private int courseId;
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "course_id")
+    private Course course;
 
-    @Column(name = "student_id")
-    private int studentId;
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "student_id")
+    private Student student;
 
     public int getId() {
         return id;
@@ -46,20 +49,20 @@ public class Review {
         this.comment = comment;
     }
 
-    public int getCourseId() {
-        return courseId;
+    public Course getCourse() {
+        return course;
     }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setCourse(Course course) {
+        this.course = course;
     }
 
-    public int getStudentId() {
-        return studentId;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     @Override
@@ -68,8 +71,8 @@ public class Review {
                 "id=" + id +
                 ", rating=" + rating +
                 ", comment='" + comment + '\'' +
-                ", courseId=" + courseId +
-                ", studentId=" + studentId +
+                ", course=" + course +
+                ", student=" + student +
                 '}';
     }
 }
