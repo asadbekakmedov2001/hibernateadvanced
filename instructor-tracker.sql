@@ -8,14 +8,17 @@ drop table if exists `review`;
 drop table if exists `course`;
 drop table if exists `instructor`;
 drop table if exists `instructor_detail`;
-drop table if exists `role`;
-drop table if exists `user`;
 
-CREATE TABLE `user` (
-	`id` 		 INT NOT NULL AUTO_INCREMENT,
+drop table if exists `users`;
+drop table if exists `roles`;
+drop table if exists `users_roles`;
+
+
+CREATE TABLE `users` (
+	`id` 	 INT NOT NULL AUTO_INCREMENT,
     `username`   VARCHAR(50) NOT NULL,
     `password`	 VARCHAR(50) NOT NULL,
-    `enabled`    VARCHAR(1) NOT NULL,
+    `enabled`    varchar(1) NOT NULL,
     `first_name` VARCHAR(50) NOT NULL,
     `last_name`  VARCHAR(50) DEFAULT NULL,
 	`email`		 VARCHAR(50) DEFAULT NULL,
@@ -23,12 +26,19 @@ CREATE TABLE `user` (
     UNIQUE (`username`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
-CREATE TABLE `role` (
-	`username` VARCHAR(50) NOT NULL,
-    `role` 	   VARCHAR(50) NOT NULL,
-    PRIMARY KEY (`username`, `role`),
-    FOREIGN KEY (`username`) REFERENCES `user` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+CREATE TABLE `roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `users_roles` (
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`, `role_id`),
+  FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+)ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `instructor_detail` (
   `id` 		        INT NOT NULL AUTO_INCREMENT,
@@ -43,7 +53,7 @@ CREATE TABLE `instructor` (
   `user_id`				 INT NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`instructor_detail_id`) REFERENCES `instructor_detail` (`id`),
-  FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `course` (
@@ -60,7 +70,7 @@ CREATE TABLE `student` (
 	`id` 	  INT NOT NULL AUTO_INCREMENT,
 	`user_id` INT NOT NULL,
     PRIMARY KEY (`id`),
-	FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+	FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `course_student` (
